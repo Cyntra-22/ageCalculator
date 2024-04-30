@@ -1,5 +1,8 @@
 <script>
 	import Date from "./Date.svelte";
+	export let day = 20;
+	export let month = 10; 
+	export let year = 22;
 </script>
 
 
@@ -30,8 +33,7 @@
 		width: 30%;
 		box-shadow: 0 6px 6px rgba(0, 0, 0, 0.1);
 		border-radius: 10px 10px 100px 10px;
-		height: 300px;
-					
+	
 	}
 	.date-conponent{
 		width: 70%;
@@ -50,7 +52,7 @@
 		
 	}
 
-	.img-style{
+	.img-style {
 		background-color: var(--font-color);
 		border-radius: 50%;
 		cursor: pointer;
@@ -59,9 +61,9 @@
 	}
 
 	img{
-		width: 60px;
+		width: 50px;
 		height: 25px;
-		padding-top: 17px;
+		padding-top: 12px;
 	}
 
 	.img-style:hover{
@@ -72,6 +74,21 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center; 
+	}
+	.year-calculation{
+		padding-left: 19px;
+		font-size: 60px;
+		font-weight: 1000;
+	}
+
+	.date-style{
+		color: var(--font-color);
+		background-color: none;
+	}
+
+	button{
+		border: none;
+		background-color: transparent;
 	}
 
 </style>
@@ -86,9 +103,15 @@
 				<div class="line-container">
 					<div class="line"></div>
 					<div class="img-style">
-						<img src="/icon-arrow.svg" alt="logo arrow" />
+						<button><img src="/icon-arrow.svg" alt="logo arrow" /></button>
 					</div>
-				</div>
-			</div>		
+				</div>				
+			</div>
+			<div class="year-calculation">
+				<span class="date-style">{year}</span><i>years</i>
+				<span class="date-style">{month}</span><i>months</i>
+				<span class="date-style">{day}</span><i>days</i>
+			</div>
+					
 	</div>
 </main>
