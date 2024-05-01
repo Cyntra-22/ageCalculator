@@ -4,9 +4,10 @@
 	export let month = '--'; 
 	export let year = '--';
 
-	function showResult(){
-		alert(day, month, year);
-	}
+	
+
+
+
 </script>
 
 <style>
