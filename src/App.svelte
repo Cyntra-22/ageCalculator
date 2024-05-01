@@ -1,10 +1,13 @@
 <script>
 	import Date from "./Date.svelte";
-	export let day = 20;
-	export let month = 10; 
-	export let year = 22;
-</script>
+	export let day = '--';
+	export let month = '--'; 
+	export let year = '--';
 
+	function showResult(){
+		alert(day, month, year);
+	}
+</script>
 
 <style>
 	:root{
@@ -36,45 +39,11 @@
 	
 	}
 	.date-conponent{
-		width: 70%;
+		width: 85%;
 		padding-left: 25px;
 	}
 
-	.line-container{
-		display: flex;
-		align-items: center;
-		width: 90%;
-	}
-
-	.line{
-		flex: 1;
-		border-top: 1px solid hsl(0, 0%, 86%);
-		
-	}
-
-	.img-style {
-		background-color: var(--font-color);
-		border-radius: 50%;
-		cursor: pointer;
-		width: 60px;
-		height: 60px;
-	}
-
-	img{
-		width: 50px;
-		height: 25px;
-		padding-top: 12px;
-	}
-
-	.img-style:hover{
-		background-color: black;
-	}
-
-	.center-container{
-		display: flex;
-		flex-direction: column;
-		align-items: center; 
-	}
+	
 	.year-calculation{
 		padding-left: 19px;
 		font-size: 60px;
@@ -86,10 +55,7 @@
 		background-color: none;
 	}
 
-	button{
-		border: none;
-		background-color: transparent;
-	}
+	
 
 </style>
 
@@ -97,20 +63,13 @@
 	<div class="main-container">
 
 			<div class="date-conponent">
-					<Date  />
+					<Date/>
 			</div>
-			<div class="center-container">
-				<div class="line-container">
-					<div class="line"></div>
-					<div class="img-style">
-						<button><img src="/icon-arrow.svg" alt="logo arrow" /></button>
-					</div>
-				</div>				
-			</div>
+			
 			<div class="year-calculation">
-				<span class="date-style">{year}</span><i>years</i>
-				<span class="date-style">{month}</span><i>months</i>
-				<span class="date-style">{day}</span><i>days</i>
+				<span class="date-style">{year}</span><i>years</i><br>
+				<span class="date-style">{month}</span><i>months</i><br>
+				<span class="date-style">{day}</span><i>days</i><br>
 			</div>
 					
 	</div>
