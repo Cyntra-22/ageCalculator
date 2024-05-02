@@ -76,12 +76,14 @@
     .date-container{
         display: flex;
         justify-content: space-between;
-        width: 75%;
+        width: 80%;
     }
 
     input{
         margin-top: 7px;
-        width: 80px;
+        width: 90px;
+		font-weight: bold;
+		font-size: 24px;
     }
 
     .line-container{
@@ -116,6 +118,20 @@
     button{
 		border: none;
 		background-color: transparent;
+		border-radius: 50%;
+	}
+
+	@media (min-width: 400px ) and (max-width: 765px){
+		.date-container{
+			width: 40%;
+			
+   	 	}
+		input{	
+			
+			width: 70px;
+			font-size: 17px;
+    	}
+
 	}
 </style>
 

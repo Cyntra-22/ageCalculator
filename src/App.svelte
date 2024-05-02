@@ -42,7 +42,6 @@
 		width: 85%;
 		padding-left: 25px;
 	}
-
 	
 	.year-calculation{
 		padding-left: 19px;
@@ -55,7 +54,24 @@
 		background-color: none;
 	}
 
-	
+	@media (min-width: 400px ) and (max-width: 765px){
+		.year-calculation{
+			font-size: 40px;
+			font-weight: 1000;
+		}
+		.main-container{
+			width: 40%;
+			height: 400px;
+		}
+		.year-calculation{
+			padding-top: 30px;
+		}
+
+		.date-conponent{
+			width: 90%;
+		
+		}
+	}
 
 </style>
 
