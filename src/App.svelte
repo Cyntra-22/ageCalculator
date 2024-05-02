@@ -4,10 +4,6 @@
 	export let month = '--'; 
 	export let year = '--';
 
-	
-
-
-
 </script>
 
 <style>

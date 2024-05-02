@@ -2,14 +2,12 @@
      let day;
      let month ;
      let year;
+	 let currentAge;
 
      function handleInput(event) {
-        const dayInt = parseInt(day, 10);
-		const monthInt = parseInt(month, 10);
-		const yearInt = parseInt(year, 10);
         
 		const { name, value } = event.target;
-		// Update the corresponding prop based on the input name
+		
 		if (name === 'day') {
 		day = value;
 		} else if (name === 'month') {
@@ -19,20 +17,47 @@
 		}
   }
 
-  	function validateDate() {
-    	
-		
+	function calculation_Age() {
+		const correct = validateDate();
 
-        
+		if (correct) {
+			const birthday = new Date(`${year}-${month}-${day}`);
+			const today = new Date(); 
+
+			let ageYears = today.getFullYear() - birthday.getFullYear();
+			let ageMonths = today.getMonth() - birthday.getMonth();
+			let ageDays = today.getDate() - birthday.getDate();
+
+			if (ageMonths < 0 || (ageMonths === 0 && ageDays < 0)) {
+				ageYears--;
+				ageMonths += 12;
+			}
+
+			if (ageDays < 0) {
+				const tempDate = new Date(today.getFullYear(), today.getMonth(), 0);
+				ageDays = tempDate.getDate() + ageDays;
+				ageMonths--;
+			}
+
+			alert(`${ageYears} years, ${ageMonths} months, ${ageDays} days`);
+		}
+}
+
+
+  	function validateDate() {
+
+		const dayInt = parseInt(day, 10);
+		const monthInt = parseInt(month, 10);
+		const yearInt = parseInt(year, 10);
+    	     
 		const isValidDay = dayInt >= 1 && dayInt <= 31;
 		const isValidMonth = monthInt >= 1 && monthInt <= 12;
-		const isValidYear = yearInt >= 1900 && yearInt <= 2100; // Adjust the range as needed
+		const isValidYear = yearInt >= 1900 && yearInt <= 2100; 
 
-		// Return true if all input values are valid, otherwise false
-		return alert(isValidDay && isValidMonth && isValidYear);
+		return isValidDay && isValidMonth && isValidYear;
   }
 
-     
+
     
 </script>
 
@@ -101,6 +126,6 @@
 <div class="line-container">
 	<div class="line"></div>
 		<div class="img-style">
-			<button on:click={validateDate}><img src="/icon-arrow.svg" alt="logo arrow" /></button>
+			<button on:click={calculation_Age}><img src="/icon-arrow.svg" alt="logo arrow" /></button>
 		</div>
 </div>				
