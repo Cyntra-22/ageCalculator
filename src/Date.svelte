@@ -122,12 +122,8 @@
 	}
 
 	@media (min-width: 400px ) and (max-width: 765px){
-		.date-container{
-			width: 40%;
-			
-   	 	}
-		input{	
-			
+	
+		input{			
 			width: 70px;
 			font-size: 17px;
     	}

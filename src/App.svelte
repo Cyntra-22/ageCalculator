@@ -61,14 +61,14 @@
 		}
 		.main-container{
 			width: 40%;
-			height: 400px;
+			height: 350px;
 		}
 		.year-calculation{
 			padding-top: 30px;
 		}
 
 		.date-conponent{
-			width: 90%;
+			width: 100%;
 		
 		}
 	}
