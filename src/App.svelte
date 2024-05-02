@@ -1,8 +1,11 @@
 <script>
 	import Date from "./Date.svelte";
-	export let day = '--';
-	export let month = '--'; 
-	export let year = '--';
+
+	let age = { years: '--', months: '--', days: '--' };
+
+	function handle_age(event) {
+		age = event.detail;
+	}
 
 </script>
 
@@ -60,13 +63,13 @@
 	<div class="main-container">
 
 			<div class="date-conponent">
-					<Date/>
+					<Date on:ageCalculated = {handle_age}/>
 			</div>
 			
 			<div class="year-calculation">
-				<span class="date-style">{year}</span><i>years</i><br>
-				<span class="date-style">{month}</span><i>months</i><br>
-				<span class="date-style">{day}</span><i>days</i><br>
+				<span class="date-style">{age.years}</span><i>years</i><br>
+				<span class="date-style">{age.months}</span><i>months</i><br>
+				<span class="date-style">{age.days}</span><i>days</i><br>
 			</div>
 					
 	</div>

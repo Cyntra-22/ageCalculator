@@ -1,8 +1,11 @@
 <script>
-     let day;
-     let month ;
-     let year;
-	 let currentAge;
+	import {createEventDispatcher} from 'svelte';
+    let day ;
+    let month ;
+    let year ;
+	let currentAge;
+
+	 const dispatch = createEventDispatcher();
 
      function handleInput(event) {
         
@@ -39,10 +42,19 @@
 				ageMonths--;
 			}
 
-			alert(`${ageYears} years, ${ageMonths} months, ${ageDays} days`);
+			currentAge = {
+				years: ageYears,
+				months: ageMonths,
+				days: ageDays
+			};
+
+			dispatch('ageCalculated', currentAge);
+
+		}
+		else{
+			return null;
 		}
 }
-
 
   	function validateDate() {
 
@@ -57,8 +69,7 @@
 		return isValidDay && isValidMonth && isValidYear;
   }
 
-
-    
+  
 </script>
 
 <style>
