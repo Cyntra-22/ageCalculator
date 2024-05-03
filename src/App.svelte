@@ -54,7 +54,7 @@
 		background-color: none;
 	}
 
-	@media (min-width: 400px ) and (max-width: 765px){
+	 @media (min-width: 300px) and (max-width: 768px ){
 		.year-calculation{
 			font-size: 40px;
 			font-weight: 1000;

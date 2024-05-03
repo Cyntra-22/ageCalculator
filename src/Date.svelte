@@ -173,7 +173,7 @@
 	}
 	
 
-	@media (min-width: 400px ) and (max-width: 765px){
+	 @media (min-width: 300px) and (max-width: 768px ){
 	
 		input{			
 			width: 70px;
