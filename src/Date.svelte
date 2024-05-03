@@ -194,6 +194,7 @@
 	}
 	.error-style{
 			font-size: 10px;
+			margin-left: 15px;
 		}
 			
 	}
