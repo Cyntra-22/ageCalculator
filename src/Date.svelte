@@ -176,8 +176,8 @@
 	 @media (min-width: 300px) and (max-width: 768px ){
 	
 		input{			
-			width: 70px;
-			font-size: 17px;
+			width: 80%;
+			font-size: 15px;
 			margin-bottom: 30px;
     	}
 		.line{
