@@ -60,7 +60,7 @@
 			font-weight: 1000;
 		}
 		.main-container{
-			width: 40%;
+			width: 60%;
 			height: 350px;
 		}
 		.year-calculation{
