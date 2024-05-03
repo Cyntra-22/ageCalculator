@@ -176,13 +176,13 @@
 	 @media (min-width: 300px) and (max-width: 768px ){
 	
 		input{			
-			width: 80%;
+			width: 90%;
 			font-size: 15px;
 			margin-bottom: 30px;
-			margin-left: 18px;
+			margin-left: 15px;
     	}
 		label{
-			margin-left: 18px;
+			margin-left: 15px;
 		}
 		.line{
 			width: 30%;
@@ -190,7 +190,11 @@
 		}
 		#display-line{
 		display: block;
+		
 	}
+	.error-style{
+			font-size: 10px;
+		}
 			
 	}
 </style>
