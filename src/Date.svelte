@@ -138,7 +138,10 @@
 	.line{
         width: 100%;
 		border-bottom: 1px solid hsl(0, 0%, 86%);
-		
+	}
+
+	#display-line{
+		display: none;
 	}
 
 	.img-style {
@@ -168,14 +171,22 @@
 	.error-style{
 		color: red;
 	}
+	
 
 	@media (min-width: 400px ) and (max-width: 765px){
 	
 		input{			
 			width: 70px;
 			font-size: 17px;
+			margin-bottom: 30px;
     	}
-
+		.line{
+			width: 30%;
+		}
+		#display-line{
+		display: block;
+	}
+			
 	}
 </style>
 
@@ -214,4 +225,5 @@
 		<div class="img-style">
 			<button on:click={calculation_Age}><img src="/icon-arrow.svg" alt="logo arrow" /></button>
 		</div>
+	<div class="line" id="display-line"></div>
 </div>				

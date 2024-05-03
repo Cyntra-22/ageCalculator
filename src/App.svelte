@@ -64,7 +64,7 @@
 			height: 350px;
 		}
 		.year-calculation{
-			padding-top: 30px;
+			padding-top: 20px;
 		}
 
 		.date-conponent{
