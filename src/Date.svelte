@@ -179,9 +179,14 @@
 			width: 80%;
 			font-size: 15px;
 			margin-bottom: 30px;
+			margin-left: 18px;
     	}
+		label{
+			margin-left: 18px;
+		}
 		.line{
 			width: 30%;
+			
 		}
 		#display-line{
 		display: block;

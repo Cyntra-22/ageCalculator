@@ -60,16 +60,16 @@
 			font-weight: 1000;
 		}
 		.main-container{
-			width: 60%;
+			width: 70%;
 			height: 350px;
 		}
 		.year-calculation{
 			padding-top: 20px;
+			margin-left: 18px;
 		}
 
 		.date-conponent{
 			width: 100%;
-		
 		}
 	}
 
