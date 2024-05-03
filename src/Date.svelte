@@ -4,6 +4,9 @@
     let month ;
     let year ;
 	let currentAge;
+	let dayError = '';
+	let monthError = '';
+	let yearError = '';
 
 	 const dispatch = createEventDispatcher();
 
@@ -13,10 +16,14 @@
 		
 		if (name === 'day') {
 		day = value;
+		dayError = validateDay(value) ? '':'Invalid Day';
+		
 		} else if (name === 'month') {
 		month = value;
+		monthError = validateMonth(value) ? '':'Invalid Month';
 		} else if (name === 'year') {
 		year = value;
+		yearError = validateYear(value) ? '':'Invalid Year';
 		}
   }
 
@@ -52,22 +59,59 @@
 
 		}
 		else{
-			return null;
+			setTimeout(() => {
+            dayError = '';
+            day = '';
+            monthError = '';
+            month = '';
+            yearError = '';
+            year = '';
+        }, 1500);
+    }
 		}
-}
+
+	function validateDay(day){
+		const dayInt = parseInt(day,10);
+		return dayInt >= 1 && dayInt <= 31;
+	}
+
+	function validateMonth(month){
+		const monthInt = parseInt(month,10);
+		return monthInt >= 1 && monthInt <= 12;
+	}
+
+	function validateYear(day){
+		const yearInt = parseInt(year,10);
+		return yearInt >= 1900 && yearInt <= 2100;
+	}
 
   	function validateDate() {
-
-		const dayInt = parseInt(day, 10);
-		const monthInt = parseInt(month, 10);
-		const yearInt = parseInt(year, 10);
     	     
-		const isValidDay = dayInt >= 1 && dayInt <= 31;
-		const isValidMonth = monthInt >= 1 && monthInt <= 12;
-		const isValidYear = yearInt >= 1900 && yearInt <= 2100; 
+		const isValidDay = validateDay(day);
+		const isValidMonth = validateMonth(month);
+		const isValidYear = validateYear(year); 
+
+		dayError = isValidDay ? '' : 'Invalid day';
+		monthError = isValidMonth ? '' : 'Invalid month';
+		yearError = isValidYear ? '' : 'Invalide year';
 
 		return isValidDay && isValidMonth && isValidYear;
   }
+
+  function updateInputStyle() {
+        if (dayError) {
+            return 'border-color: red; color: red; background-color:pink;';
+        } 
+		else if (monthError) {
+            return 'border-color: red; color: red; background-color:pink;';
+        } 
+		else if (yearError) {
+            return 'border-color: red; color: red; background-color:pink;';
+        } 		
+		else {
+            return '';
+        }
+    }
 
   
 </script>
@@ -121,6 +165,10 @@
 		border-radius: 50%;
 	}
 
+	.error-style{
+		color: red;
+	}
+
 	@media (min-width: 400px ) and (max-width: 765px){
 	
 		input{			
@@ -134,15 +182,30 @@
 <div class="date-container">
     <div>
         <label for="dayInput">DAY</label>
-        <input type="number" placeholder = "DD" bind:value={day} on:input={handleInput}/>
+		{#if dayError}
+        	<input type="number" placeholder = "DD" bind:value={day} on:input={handleInput} style="{updateInputStyle()}"/>
+			<p class="error-style">{dayError}</p>
+		{:else}
+			<input type="number" placeholder = "DD" bind:value={day} on:input={handleInput}/>
+		{/if}
     </div>
     <div>
         <label for="dayInput">MONTH</label>
-        <input type="number" placeholder = "MM" bind:value={month} on:input={handleInput}/>
+		{#if monthError}
+        	<input type="number" placeholder = "MM" bind:value={month} on:input={handleInput} style="{updateInputStyle()}"/>
+			<p class="error-style">{monthError}</p>
+		{:else}
+			<input type="number" placeholder = "MM" bind:value={month} on:input={handleInput}/>
+		{/if}
     </div>
     <div>
         <label for="dayInput">YEAR</label>
-        <input type="number" placeholder = "YY" bind:value ={year} on:input={handleInput}/>
+		{#if yearError}
+        	<input type="number" placeholder = "YY" bind:value ={year} on:input={handleInput} style="{updateInputStyle()}"/>
+			<p class="error-style">{yearError}</p>
+		{:else}
+			<input type="number" placeholder = "YY" bind:value ={year} on:input={handleInput}/>
+		{/if}
     </div>
 </div>
 
