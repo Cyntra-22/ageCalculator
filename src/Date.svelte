@@ -168,6 +168,11 @@
 		border-radius: 50%;
 	}
 
+	button:active{
+		border: none;
+		background-color: transparent;
+	}
+
 	.error-style{
 		color: red;
 	}
