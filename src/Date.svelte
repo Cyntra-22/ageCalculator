@@ -209,28 +209,28 @@
     <div>
         <label for="dayInput">DAY</label>
 		{#if dayError}
-        	<input type="number" placeholder = "DD" bind:value={day} on:input={handleInput} style="{updateInputStyle()}"/>
+        	<input type="text" placeholder = "DD" bind:value={day} on:input={handleInput} style="{updateInputStyle()}"/>
 			<p class="error-style">{dayError}</p>
 		{:else}
-			<input type="number" placeholder = "DD" bind:value={day} on:input={handleInput}/>
+			<input type="text" placeholder = "DD" bind:value={day} on:input={handleInput}/>
 		{/if}
     </div>
     <div>
         <label for="dayInput">MONTH</label>
 		{#if monthError}
-        	<input type="number" placeholder = "MM" bind:value={month} on:input={handleInput} style="{updateInputStyle()}"/>
+        	<input type="text" placeholder = "MM" bind:value={month} on:input={handleInput} style="{updateInputStyle()}"/>
 			<p class="error-style">{monthError}</p>
 		{:else}
-			<input type="number" placeholder = "MM" bind:value={month} on:input={handleInput}/>
+			<input type="text" placeholder = "MM" bind:value={month} on:input={handleInput}/>
 		{/if}
     </div>
     <div>
         <label for="dayInput">YEAR</label>
 		{#if yearError}
-        	<input type="number" placeholder = "YY" bind:value ={year} on:input={handleInput} style="{updateInputStyle()}"/>
+        	<input type="text" placeholder = "YY" bind:value ={year} on:input={handleInput} style="{updateInputStyle()}"/>
 			<p class="error-style">{yearError}</p>
 		{:else}
-			<input type="number" placeholder = "YY" bind:value ={year} on:input={handleInput}/>
+			<input type="text" placeholder = "YY" bind:value ={year} on:input={handleInput}/>
 		{/if}
     </div>
 </div>
